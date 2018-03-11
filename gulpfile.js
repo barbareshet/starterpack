@@ -1,5 +1,7 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass');
+const sourcemaps = require('gulp-sourcemaps');
+const cleanCSS = require('gulp-clean-css');
 const browserSync = require('browser-sync').create();
 
 
@@ -10,10 +12,13 @@ const baseHTTP = 'http://localhost/twbs4/';
 
 //Sass
 gulp.task('sass', function () {
-        return gulp.src([nodeFolder + 'bootstrap/scss/bootstrap.scss', devFolder + 'scss/*.scss'])
-        .pipe(sass())
-        .pipe(gulp.dest(distFolder + 'css'))
-        .pipe(browserSync.stream());
+        return gulp.src([devFolder + 'scss/**/*.scss'])
+            .pipe(sourcemaps.init())
+            .pipe(sass())
+            .pipe(cleanCSS())
+            .pipe(sourcemaps.write())
+            .pipe(gulp.dest(distFolder + 'css'))
+            .pipe(browserSync.stream());
 });
 
 //Move FA Fonts to dist folder
@@ -40,9 +45,9 @@ gulp.task('js',function () {
 gulp.task('serve',['sass'],function () {
     browserSync.init({
         files: ['./**/*.html'],
-        proxy: baseHTTP + 'starterpack'
+        proxy: baseHTTP + 'booktheme'
     });
-    gulp.watch([nodeFolder + 'bootstap/scss/bootstrap.scss', devFolder + 'scss/*.scss'], ['sass']);
+    gulp.watch([nodeFolder + 'bootstap/scss/bootstrap.scss', devFolder + 'scss/**/*.scss'], ['sass']);
     gulp.watch('starterpack/*.html').on('cahnge',browserSync.reload);
 });
 
