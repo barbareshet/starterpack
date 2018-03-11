@@ -6,15 +6,39 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>TWBS 4 Starter Pack</title>
     <link rel="stylesheet" href="dist/fonts/font-awesome.min.css">
-    <link rel="stylesheet" href="dist/css/bootstrap.css">
     <link rel="stylesheet" href="dist/css/main.css">
 </head>
 <body>
-<section id="hero" class="jumbotron">
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
+    <div class="container py-2">
+        <a class="navbar-brand" href="#">
+            <span class="d-inline align-middle" id="logo">B</span>
+            Barbareshet
+        </a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav ml-auto text-white">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<section id="hero" class="jumbotron bg-warning text-dark">
+
     <div class="container">
-        <div class="row">
+        <div class="d-flex flex-column">
             <h1>TWBS 4 Starter Pack</h1>
-            <p class="lead">TWBS 4 Starter Pack with gulp and sass</p>
+            <p class="lead py-4">TWBS 4 Starter Pack with gulp and sass</p>
         </div>
     </div>
 </section>

@@ -10,7 +10,7 @@ const baseHTTP = 'http://localhost/twbs4/';
 
 //Sass
 gulp.task('sass', function () {
-        return gulp.src([nodeFolder + 'bootstrap/scss/bootstrap.scss', devFolder + 'scss/*.scss'])
+        return gulp.src([devFolder + 'scss/**/*.scss'])
         .pipe(sass())
         .pipe(gulp.dest(distFolder + 'css'))
         .pipe(browserSync.stream());
@@ -42,7 +42,7 @@ gulp.task('serve',['sass'],function () {
         files: ['./**/*.html'],
         proxy: baseHTTP + 'starterpack'
     });
-    gulp.watch([nodeFolder + 'bootstap/scss/bootstrap.scss', devFolder + 'scss/*.scss'], ['sass']);
+    gulp.watch([nodeFolder + 'bootstap/scss/bootstrap.scss', devFolder + 'scss/**/*.scss'], ['sass']);
     gulp.watch('starterpack/*.html').on('cahnge',browserSync.reload);
 });
 
