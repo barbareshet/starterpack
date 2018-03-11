@@ -19,6 +19,7 @@ gulp.task('sass', function () {
             .pipe(sourcemaps.write())
             .pipe(gulp.dest(distFolder + 'css'))
             .pipe(browserSync.stream());
+
 });
 
 //Move FA Fonts to dist folder

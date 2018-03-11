@@ -9,21 +9,40 @@
     <link rel="stylesheet" href="dist/css/main.css">
 </head>
 <body>
-<nav class="navbar navbar-expand-md navbar-light fixed-top py-4">
-    <div class="container">
-        <a href="index.html" class="navbar-brand">
-            <span id="logo">B</span>
-            <!-- /#logo -->
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
+    <div class="container py-2">
+        <a class="navbar-brand" href="#">
+            <span class="d-inline align-middle" id="logo">B</span>
+            Barbareshet
         </a>
-        <!-- /.navbar-brand -->
-        <button class="navbar-toggler" data-toggle="collapse" data-target="#mainNav">
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-            <!-- /.navbar-toggler-icon -->
         </button>
-        <!-- /.navbar-toggler -->
+        <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav ml-auto text-white">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<section id="hero" class="jumbotron bg-warning text-dark">
+
+    <div class="container">
+        <div class="d-flex flex-column">
+            <h1>TWBS 4 Starter Pack</h1>
+            <p class="lead py-4">TWBS 4 Starter Pack with gulp and sass</p>
+        </div>
     </div>
     <!-- /.container -->
-</nav>
+</section>
 <!-- /.navbar navbar-expand-md navbar-light fixed-top py-4 -->
 
     <script src="dist/js/jquery.min.js"></script>
